@@ -1,0 +1,8 @@
+version: "3.4"
+services:
+  kata-object-arrays:
+    build:
+      context: .
+    container_name: kata-objects-arrays
+    volumes:
+      - "${PWD}:/app"
