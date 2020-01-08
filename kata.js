@@ -2,15 +2,18 @@
  * Objects, keys/properties and values
  */
 
-// getGreeting should return a string containing 'Hello ' and the contents of `name`
+// getGreeting should return a string containing 'Hello ' and
+// the contents of `name`
 function getGreeting (name) {
   return 'Hello ' + name
 }
 
-// ageOneYear should add one to the `age` property of `obj`
+// ageOneYear should return a new object with an `age` property 1 greater
+// than the `age` property of `obj`
 function ageOneYear (obj) {
-  obj.age += 1
-  return obj
+  return {
+    age: obj.age + 1
+  }
 }
 
 // makeObject should return an object that looks like this:
@@ -29,16 +32,19 @@ function getValue (obj, key) {
   return obj[key]
 }
 
-// addName should add a `name` property to the object with the value of the `name` argument
+// addName should return a copy of `obj` with the addition of a `name`
+// property that has the value of the `name` argument
 function addName (obj, name) {
-  obj.name = name
+  return { ...obj, name }
 }
 
-// deleteProperty should remove the property contained in `key` from `obj`
+// deleteProperty should return a new copy of `obj` without the property name
+// that matches the `key` parameter
 // Tip: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/delete
 function deleteProperty (obj, key) {
-  delete obj[key]
-  return obj
+  const newObj = { ...obj }
+  delete newObj[key]
+  return newObj
 }
 
 // returnErrorIfFalsy should return a JavaScript Error object with message:
@@ -60,17 +66,15 @@ function keys (obj) {
 // values should return an array of the object's own values
 // For example, given { foo: 1, bar: 2} it would return [1, 2]
 function values (obj) {
-  return Object.keys(obj).map(function (prop) {
-    return obj[prop]
-  })
+  return Object.values(obj)
 }
 
 /**
  * Arrays
  */
 
-// makeArrayOfItem should return an array that is `length` long, made up of `item`
-// For example, makeArrayOfItem('foo', 2) would return:
+// makeArrayOfItem should return an array that is `length` long, made up of
+// `item`. For example, makeArrayOfItem('foo', 2) would return:
 // ['foo', 'foo']
 function makeArrayOfItem (item, length) {
   const array = []
@@ -106,31 +110,34 @@ function getItemAtIndex (arr, idx) {
   }
 }
 
-// replaceItemAtIndex should replace the element at `idx` with `item`
+// replaceItemAtIndex should return a copy of `arr` with the element at
+// `idx` replaced with `item`
 function replaceItemAtIndex (arr, idx, item) {
-  arr[idx] = item
-  return arr
+  const newArray = [ ...arr ]
+  newArray[idx] = item
+  return newArray
 }
 
-// insertItemAtIndex should insert `item` at `idx` without overwriting
-// any array values (the array should get longer)
+// insertItemAtIndex should return a copy of `arr` with `item` inserted at
+// `idx` without overwriting any array values (the array should get longer)
 function insertItemAtIndex (arr, item,  idx) {
-  arr.splice(idx, 0, item)
-  return arr
+  const newArray = arr.slice(0, idx)
+  newArray.push(item)
+  newArray.concat(arr.slice(idx))
+  return newArray
 }
 
-// deleteItemAtIndex should remove the element at `idx` (the array
-// should get shorter).
+// deleteItemAtIndex should return a copy of `arr` without
+// the element at `idx` (the array should get shorter).
 function deleteItemAtIndex (arr, idx) {
-  arr.splice(idx, 1)
-  return arr
+  const newArray = arr.slice(0, idx)
+  newArray.concat(arr.slice(idx + 1))
+  return newArray
 }
 
 // deleteItem should return an array with every instance of `item` removed
 function deleteItem (arr, item) {
-  return arr.filter(function (currentItem) {
-    return currentItem !== item
-  })
+  return arr.filter(currentItem => currentItem !== item)
 }
 
 // zipObject should return an object built from two arrays
@@ -163,29 +170,21 @@ function unzipObject(obj) {
 // it will return:
 //   { b: 2, c: 3 }
 function findOneByProperty (arr, search) {
-  let found = null
   const prop = Object.keys(search)[0]
-  arr.forEach(function (item) {
-    const itemProp = Object.keys(item)[0]
-    if (itemProp === prop && item[prop] === search[prop]) {
-      found = item
-    }
+  return arr.find(item => {
+    const hasKey = Object.keys(item).includes(prop)
+    return hasKey && item[prop] === search[prop]
   })
-  return found
 }
 
 // findAll should return an array containing all objects in `arr` that
 // have the property and value of `search`
 function findAll (arr, search) {
-  const found = []
   const prop = Object.keys(search)[0]
-  arr.forEach(function (item) {
+  return arr.filter(item => {
     const hasKey = Object.keys(item).includes(prop)
-    if (hasKey && item[prop] === search[prop]) {
-      found.push(item)
-    }
+    return hasKey && item[prop] === search[prop]
   })
-  return found
 }
 
 module.exports = {
