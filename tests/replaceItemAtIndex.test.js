@@ -5,5 +5,6 @@ test('replaceItemAtIndex replaces the correct item', () => {
   const expected = ['alpha', 'b', 'c', 'd', 'e']
   const actual = kata.replaceItemAtIndex(alphabet, 0, 'alpha')
   expect(actual).toEqual(expected)
+  expect(actual).not.toBe(alphabet)
 })
 

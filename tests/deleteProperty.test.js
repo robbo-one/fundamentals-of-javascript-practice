@@ -15,5 +15,6 @@ test('deleteProp deletes properties', () => {
   const actual = kata.deleteProperty(mickey, 'email')
 
   expect(actual).toEqual(expected)
+  expect(actual).not.toBe(mickey)
 })
 

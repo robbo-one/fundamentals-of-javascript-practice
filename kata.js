@@ -2,8 +2,8 @@
  * Objects, keys/properties and values
  */
 
-// getGreeting should return a string containing 'Hello ' and
-// the contents of `name`
+// getGreeting should return a string containing
+// 'Hello ' and the contents of `name`
 function getGreeting (name) {
   return 'Hello ' + name
 }
@@ -27,20 +27,22 @@ function makeObject (key, value) {
   return obj
 }
 
-// getValue should return the value of the property contained in `key`
+// getValue should return the value of the
+// property contained in the `key` of `obj`
 function getValue (obj, key) {
   return obj[key]
 }
 
 // addName should return a copy of `obj` with the addition of a `name`
 // property that has the value of the `name` argument
+// Tip: consider the object literal spread syntax
 function addName (obj, name) {
   return { ...obj, name }
 }
 
 // deleteProperty should return a new copy of `obj` without the property name
 // that matches the `key` parameter
-// Tip: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/delete
+// Tip: consider JavaScript's `delete` operator
 function deleteProperty (obj, key) {
   const newObj = { ...obj }
   delete newObj[key]
@@ -58,13 +60,13 @@ function returnErrorIfFalsy (val) {
 }
 
 // keys should return an array of the object's property names (keys)
-// For example, given {foo: 1, bar: 2} it would return ['foo', 'bar']
+// For example, given { foo: 1, bar: 2 } it would return ['foo', 'bar']
 function keys (obj) {
   return Object.keys(obj)
 }
 
 // values should return an array of the object's own values
-// For example, given { foo: 1, bar: 2} it would return [1, 2]
+// For example, given { foo: 1, bar: 2 } it would return [1, 2]
 function values (obj) {
   return Object.values(obj)
 }
@@ -85,17 +87,14 @@ function makeArrayOfItem (item, length) {
 }
 
 // makeArrayOfItems should return an array containing all arguments passed to it
-// Tip: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/arguments
-function makeArrayOfItems () {
-  const array = []
-  for (let prop in arguments) {
-    array.push(arguments[prop])
-  }
-  return array
+// Tip: consider JavaScript's Rest parameters
+function makeArrayOfItems (...args) {
+  return args
 }
 
 // hasItem should return true if `item` is present in `arr` at least once,
 // otherwise it should return false.
+// Tip: there is an array function that makes this straightforward
 function hasItem (arr, item) {
   return arr.includes(item)
 }
@@ -105,15 +104,15 @@ function hasItem (arr, item) {
 function getItemAtIndex (arr, idx) {
   if (arr[idx]) {
     return arr[idx]
-  } else {
-    return new Error()
   }
+  return new Error()
 }
 
-// replaceItemAtIndex should return a copy of `arr` with the element at
-// `idx` replaced with `item`
+// replaceItemAtIndex should return a copy of `arr` with
+// the element at `idx` replaced with `item`
+// Tip: consider the array literal spread syntax
 function replaceItemAtIndex (arr, idx, item) {
-  const newArray = [ ...arr ]
+  const newArray = [...arr]
   newArray[idx] = item
   return newArray
 }
@@ -142,7 +141,7 @@ function deleteItem (arr, item) {
 
 // zipObject should return an object built from two arrays
 // For example, given ['foo', 'bar'] and [1, 2] it would return
-// { foo: 1, bar: 2}
+// { foo: 1, bar: 2 }
 function zipObject (keys, values) {
   const obj = {}
   for (let i = 0; i < keys.length; i++) {

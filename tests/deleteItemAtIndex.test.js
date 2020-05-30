@@ -7,5 +7,6 @@ test('deleteItemAtIndex deletes an element from the array', () => {
   const actual = kata.deleteItemAtIndex(names, 2)
 
   expect(actual).not.toContain(removed)
+  expect(actual).not.toBe(names)
 })
 

@@ -73,7 +73,8 @@ The file you'll be working in is `kata.js`. This file is full of incomplete func
 Let's try it! Open `kata.js` in your editor. The first function looks like this:
 
 ```js
-// getGreeting should return a string containing 'Hello ' and the contents of `name`
+// getGreeting should return a string containing
+// 'Hello ' and the contents of `name`
 function getGreeting (name) {
 }
 ```
@@ -86,7 +87,7 @@ function getGreeting (name) {
 }
 ```
 
-You'll notice that when you save `kata.js` your terminal indicates the test is now passing. 
+You'll notice that when you save `kata.js` your terminal indicates the test is now passing.
 
 ```
  PASS  tests/getGreeting.test.js
@@ -107,12 +108,12 @@ Now you should press the `q` key in the terminal to stop the test runner (`w` wi
 
 This way we can practise the basics of JavaScript and build up our muscle memory:
 
- * read what the next function is supposed to do
- * run the tests using `npm test nameOfTheFunctionYoureWorkingOn`
- * think and talk about how to solve the problem
- * write the code and save the file
- * read any errors and keep trying
- * rinse and repeat until all the tests pass
+ 1. read what the next function is supposed to do
+ 1. run the tests using `npm test nameOfTheFunctionYoureWorkingOn`
+ 1. think and talk about how to solve the problem
+ 1. write the code and save the file
+ 1. read any errors and keep trying
+ 1. rinse and repeat until all the tests pass
 
 In later challenges we're going to become a lot more familiar with this process. A pattern very similar to this is known as Test Driven Development (TDD).
 
@@ -128,15 +129,3 @@ npm test tests
 ```
 
 This will run all tests in the `tests` directory.
-
-
-## Useful Links
-
-The following links may help with the less familiar aspects of this challenge:
-
-- [Object.keys()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/keys)
-- [arguments](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/arguments)
-- [JavaScript objects](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)
-- [JavaScript arrays](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
-- [Code kata](https://en.wikipedia.org/wiki/Kata_(programming))
-
