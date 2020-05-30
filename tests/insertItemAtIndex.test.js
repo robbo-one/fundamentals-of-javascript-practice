@@ -5,4 +5,5 @@ test('insertItemAtIndex inserts an element into the array', () => {
   const toAdd = 'Dan'
   const actual = kata.insertItemAtIndex(names, toAdd, 3)
   expect(actual).toContain(toAdd)
+  expect(actual).not.toBe(names)
 })
