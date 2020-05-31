@@ -1,6 +1,6 @@
 const kata = require('../kata.js')
 
-test('addName adds a name property', () => {
+test('addName returns a copy of the input object with an added name property', () => {
   const name = 'Matthieu Ricard'
   const obj = {
     address: '123 Happy Place'

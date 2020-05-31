@@ -7,7 +7,7 @@ In this exercise we'll practise some of the fundamentals of JavaScript and start
 
 ## Installation
 
-First, in your terminal, navigate to your `workspace` directory and clone the repository from GitHub. Don't forget, you can use the `TAB` key to complete long directory names (but not GitHub URLs!).
+First, in your terminal, navigate to your `workspace` directory and clone the repository from GitHub. Don't forget, you can use the `TAB` key to complete long directory names (but not GitHub URLs).
 
 ```
 cd workspace

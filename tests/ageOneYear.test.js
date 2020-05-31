@@ -1,6 +1,6 @@
 const kata = require('../kata.js')
 
-test('ageOneYear adds 1 year to the age property of an object', () => {
+test('ageOneYear returns a copy of the input object with an age property incremented', () => {
   const mickey = {
     name: 'Mickey Mouse',
     age: 64,

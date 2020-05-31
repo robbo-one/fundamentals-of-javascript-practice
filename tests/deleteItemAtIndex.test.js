@@ -1,6 +1,6 @@
 const kata = require('../kata.js')
 
-test('deleteItemAtIndex deletes an element from the array', () => {
+test('deleteItemAtIndex returns an array without an element', () => {
   const names = [ 'Aroha', 'Bob', 'Celia', 'Eleanor' ]
   const removed = 'Celia'
 
