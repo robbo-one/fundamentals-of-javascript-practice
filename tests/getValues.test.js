@@ -1,6 +1,6 @@
 const kata = require('../kata.js')
 
-test('values returns own values for an object', () => {
+test('getValues returns own values for an object', () => {
   const dracula = {
     name: 'Count Dracula',
     email: 'dracula@hotmail.com',
@@ -14,7 +14,7 @@ test('values returns own values for an object', () => {
     'Transylvania'
   ]
 
-  const actual = kata.values(dracula)
+  const actual = kata.getValues(dracula)
 
   expect(actual).toEqual(expected)
 })

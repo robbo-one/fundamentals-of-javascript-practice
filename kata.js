@@ -27,9 +27,9 @@ function makeObject (key, value) {
   return obj
 }
 
-// getValue should return the value of the
+// getPropertyValue should return the value of the
 // property contained in the `key` of `obj`
-function getValue (obj, key) {
+function getPropertyValue (obj, key) {
   return obj[key]
 }
 
@@ -61,13 +61,13 @@ function returnErrorIfFalsy (val) {
 
 // keys should return an array of the object's property names (keys)
 // For example, given { foo: 1, bar: 2 } it would return ['foo', 'bar']
-function keys (obj) {
+function getKeys (obj) {
   return Object.keys(obj)
 }
 
-// values should return an array of the object's own values
+// getValues should return an array of the object's own values
 // For example, given { foo: 1, bar: 2 } it would return [1, 2]
-function values (obj) {
+function getValues (obj) {
   return Object.values(obj)
 }
 
@@ -187,25 +187,25 @@ function findAll (arr, search) {
 }
 
 module.exports = {
-  addName: addName,
-  ageOneYear: ageOneYear,
-  deleteItem: deleteItem,
-  deleteItemAtIndex: deleteItemAtIndex,
-  deleteProperty: deleteProperty,
-  getGreeting: getGreeting,
-  getItemAtIndex : getItemAtIndex,
-  getValue: getValue,
-  findOneByProperty: findOneByProperty,
-  findAll: findAll,
-  hasItem : hasItem,
-  insertItemAtIndex: insertItemAtIndex,
-  keys: keys,
-  makeArrayOfItem: makeArrayOfItem,
-  makeArrayOfItems: makeArrayOfItems,
-  makeObject: makeObject,
-  replaceItemAtIndex: replaceItemAtIndex,
-  returnErrorIfFalsy: returnErrorIfFalsy,
-  unzipObject: unzipObject,
-  values: values,
-  zipObject: zipObject
+  addName,
+  ageOneYear,
+  deleteItem,
+  deleteItemAtIndex,
+  deleteProperty,
+  getGreeting,
+  getItemAtIndex,
+  getKeys,
+  getPropertyValue,
+  getValues,
+  findOneByProperty,
+  findAll,
+  hasItem,
+  insertItemAtIndex,
+  makeArrayOfItem,
+  makeArrayOfItems,
+  makeObject,
+  replaceItemAtIndex,
+  returnErrorIfFalsy,
+  unzipObject,
+  zipObject
 }

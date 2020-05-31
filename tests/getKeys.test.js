@@ -1,6 +1,6 @@
 const kata = require('../kata.js')
 
-test('keys returns own property keys for an object', () => {
+test('getKeys returns own property keys for an object', () => {
   const dracula = {
     name: 'Count Dracula',
     email: 'dracula@hotmail.com',
@@ -9,7 +9,7 @@ test('keys returns own property keys for an object', () => {
   }
   const expected = ['name', 'email', 'password', 'country']
 
-  const actual = kata.keys(dracula)
+  const actual = kata.getKeys(dracula)
 
   expect(actual).toEqual(expected)
 })
