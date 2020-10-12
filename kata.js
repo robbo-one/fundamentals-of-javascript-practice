@@ -15,7 +15,7 @@ function ageOneYear (obj) {
 // makeObject should return an object that looks like this:
 // (but using the arguments passed to the function)
 // {
-//   key: value
+// // key: value
 // }
 function makeObject (key, value) {
 }
@@ -88,7 +88,7 @@ function replaceItemAtIndex (arr, idx, item) {
 
 // insertItemAtIndex should return a copy of `arr` with `item` inserted at
 // `idx` without overwriting any array values (the array should get longer)
-function insertItemAtIndex (arr, item,  idx) {
+function insertItemAtIndex (arr, item, idx) {
 }
 
 // deleteItemAtIndex should return a copy of `arr` without
