@@ -119,7 +119,7 @@ function replaceItemAtIndex (arr, idx, item) {
 
 // insertItemAtIndex should return a copy of `arr` with `item` inserted at
 // `idx` without overwriting any array values (the array should get longer)
-function insertItemAtIndex (arr, item,  idx) {
+function insertItemAtIndex (arr, item, idx) {
   const newArray = arr.slice(0, idx)
   newArray.push(item)
   newArray.concat(arr.slice(idx))
@@ -154,9 +154,9 @@ function zipObject (keys, values) {
 // unzipObject should return an array of arrays, each one a pair of keys and values
 // For example, given { foo: 1, bar: 2} it would return
 // [['foo', 1], ['bar', 2]]
-function unzipObject(obj) {
+function unzipObject (obj) {
   const arr = []
-  for (let prop in obj) {
+  for (const prop in obj) {
     const child = [prop, obj[prop]]
     arr.push(child)
   }
