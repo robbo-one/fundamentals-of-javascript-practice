@@ -112,6 +112,14 @@ function makeArrayOfItems (...args) {
 // otherwise it should return false.
 // Tip: there is an array function that makes this straightforward
 function hasItem (arr, item) {
+  for (i = 0; i < arr.length; i++) {
+    if (arr[i] == item) {
+      return true
+    } else {
+      return false
+    }
+  }
+  console.log(arr, item)
 }
 
 // getItemAtIndex should return arr[idx] but only if that index exists:
