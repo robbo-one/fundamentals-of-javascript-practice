@@ -23,6 +23,10 @@ function ageOneYear (obj) {
 //   key: value
 // }
 function makeObject (key, value) {
+  const newObj = {}
+  newObj[key] = value
+  console.log(newObj)
+  return newObj
 }
 
 // getPropertyValue should return the value of the
