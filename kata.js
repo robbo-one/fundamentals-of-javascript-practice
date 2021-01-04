@@ -139,13 +139,18 @@ function getItemAtIndex (arr, idx) {
 function replaceItemAtIndex (arr, idx, item) {
   let newArr = [...arr]
   newArr[idx] = item
-  console.log(newArr)
+  // console.log(newArr)
   return newArr
 }
 
 // insertItemAtIndex should return a copy of `arr` with `item` inserted at
 // `idx` without overwriting any array values (the array should get longer)
 function insertItemAtIndex (arr, item,  idx) {
+  // console.log(idx, item)
+  let newArr = [...arr]
+  newArr.splice(idx, 0, item)
+  // console.log(newArr)
+  return newArr
 }
 
 // deleteItemAtIndex should return a copy of `arr` without
