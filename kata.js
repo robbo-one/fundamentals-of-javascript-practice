@@ -41,6 +41,12 @@ function getPropertyValue (obj, key) {
 // property that has the value of the `name` argument
 // Tip: consider the object literal spread syntax
 function addName (obj, name) {
+  const newObj = {
+    ...obj,  
+  }
+  newObj["name"] = name
+  return newObj
+  console.log(obj, name)
 }
 
 // deleteProperty should return a new copy of `obj` without the property name
