@@ -156,10 +156,15 @@ function insertItemAtIndex (arr, item,  idx) {
 // deleteItemAtIndex should return a copy of `arr` without
 // the element at `idx` (the array should get shorter).
 function deleteItemAtIndex (arr, idx) {
+  newArr = [...arr]
+  delete newArr[idx]
+  return newArr
 }
 
 // deleteItem should return an array with every instance of `item` removed
 function deleteItem (arr, item) {
+  const newArr = [...arr.splice(idx, 1)]
+  return newArr
 }
 
 // zipObject should return an object built from two arrays
