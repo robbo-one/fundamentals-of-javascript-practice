@@ -73,6 +73,9 @@ function returnErrorIfFalsy (val) {
 // keys should return an array of the object's property names (keys)
 // For example, given { foo: 1, bar: 2 } it would return ['foo', 'bar']
 function getKeys (obj) {
+  const newArr = Object.keys(obj)
+  console.log(newArr)
+  return newArr
 }
 
 // getValues should return an array of the object's own values
