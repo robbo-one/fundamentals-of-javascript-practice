@@ -94,11 +94,18 @@ function getValues (obj) {
 // `item`. For example, makeArrayOfItem('foo', 2) would return:
 // ['foo', 'foo']
 function makeArrayOfItem (item, length) {
+  let newArr = []
+  for (i = 0; i < length; i++) {
+    newArr.push(item)
+  }
+  return newArr
 }
 
 // makeArrayOfItems should return an array containing all arguments passed to it
 // Tip: consider JavaScript's Rest parameters
-function makeArrayOfItems () {
+function makeArrayOfItems (...args) {
+  newArr = [...args]
+  return newArr
 }
 
 // hasItem should return true if `item` is present in `arr` at least once,
