@@ -5,11 +5,17 @@
 // getGreeting should return a string containing
 // 'Hello ' and the contents of `name`
 function getGreeting (name) {
+  return "Hello " + name
 }
 
 // ageOneYear should return a new object with an `age` property 1 greater
 // than the `age` property of `obj`
 function ageOneYear (obj) {
+  const newObj = {
+    ...obj,
+    age: obj.age + 1
+  }
+  return newObj
 }
 
 // makeObject should return an object that looks like this:
@@ -18,6 +24,10 @@ function ageOneYear (obj) {
 //   key: value
 // }
 function makeObject (key, value) {
+  const newObj = {}
+  newObj[key] = value
+  console.log(newObj)
+  return newObj
 }
 
 // getPropertyValue should return the value of the
