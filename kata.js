@@ -171,12 +171,26 @@ function deleteItem (arr, item) {
 // For example, given ['foo', 'bar'] and [1, 2] it would return
 // { foo: 1, bar: 2 }
 function zipObject (keys, values) {
+  obj = {}
+  for (let i = 0; i < keys.length; i++) {
+    obj[keys[i]] = values[i]
+  }
+  return obj
 }
 
 // unzipObject should return an array of arrays, each one a pair of keys and values
 // For example, given {foo: 1, bar: 2} it would return
 // [['foo', 1], ['bar', 2]]
 function unzipObject (obj) {
+  const keysArr = Object.keys(obj)
+  const valuesArr = Object.values(obj)
+  let newArr = []
+  for (let i = 0; i < keysArr.length; i++) {
+    newArr[i] = []
+    newArr[i][0] = keysArr[i]
+    newArr[i][1] = valuesArr[i]
+  } 
+  return newArr
 }
 
 // findOneByProperty should return an object from `arr` that has the
@@ -190,7 +204,7 @@ function findOneByProperty (arr, search) {
 // findAll should return an array containing all objects in `arr` that
 // have the property and value of `search`
 function findAll (arr, search) {
-
+  
 }
 
 module.exports = {
