@@ -136,6 +136,9 @@ function getItemAtIndex (arr, idx) {
 // the element at `idx` replaced with `item`
 // Tip: consider the array literal spread syntax
 function replaceItemAtIndex (arr, idx, item) {
+  const newArr = [...arr]
+  newArr.splice(0, 1, item)
+  return newArr
 }
 
 // insertItemAtIndex should return a copy of `arr` with `item` inserted at
