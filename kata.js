@@ -152,6 +152,9 @@ function insertItemAtIndex (arr, item, idx) {
 // deleteItemAtIndex should return a copy of `arr` without
 // the element at `idx` (the array should get shorter).
 function deleteItemAtIndex (arr, idx) {
+  const newArr = [...arr]
+  delete newArr[idx]
+  return newArr
 }
 
 // deleteItem should return an array with every instance of `item` removed
