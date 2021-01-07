@@ -5,36 +5,54 @@
 // getGreeting should return a string containing
 // 'Hello ' and the contents of `name`
 function getGreeting (name) {
+  return "Hello " + name;
 }
 
 // ageOneYear should return a new object with an `age` property 1 greater
 // than the `age` property of `obj`
 function ageOneYear (obj) {
+  let newObj = {
+    ...obj,
+    age: obj.age + 1,
+  }
+  return newObj;
 }
 
 // makeObject should return an object that looks like this:
 // (but using the arguments passed to the function)
-// {
 //   key: value
-// }
+
 function makeObject (key, value) {
+     return {[key]: value};
 }
 
 // getPropertyValue should return the value of the
 // property contained in the `key` of `obj`
 function getPropertyValue (obj, key) {
+  return obj[key];
 }
 
 // addName should return a copy of `obj` with the addition of a `name`
 // property that has the value of the `name` argument
 // Tip: consider the object literal spread syntax
 function addName (obj, name) {
+  let newObj = {
+    ...obj,
+  }
+  newObj.name = name;
+
+  return newObj;
 }
 
 // deleteProperty should return a new copy of `obj` without the property name
 // that matches the `key` parameter
 // Tip: consider JavaScript's `delete` operator
 function deleteProperty (obj, key) {
+  delete obj[key];
+  let veryNewObj = {
+    ...obj
+  }
+  return veryNewObj;
 }
 
 // returnErrorIfFalsy should return a JavaScript Error object with message:
