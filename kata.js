@@ -67,24 +67,23 @@ function deleteProperty (obj, key) {
 // if val evaluates to false
 // Tip: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error
 function returnErrorIfFalsy (val) {
-  if (val == false) {
-    try {
-      throw new Error('Oh no, an error!')
-    } catch (e) {
-      console.error('Oh no, an error! ')
-    }
-  } return undefined
-  
+  if (val === 0) {
+    return Error("Oh no, an error!")
+  } else {
+    return undefined
+  }
 }
 
 // keys should return an array of the object's property names (keys)
 // For example, given { foo: 1, bar: 2 } it would return ['foo', 'bar']
 function getKeys (obj) {
+  return Object.keys(obj)
 }
 
 // getValues should return an array of the object's own values
 // For example, given { foo: 1, bar: 2 } it would return [1, 2]
 function getValues (obj) {
+  return Object.values(obj)
 }
 
 /**
@@ -95,42 +94,77 @@ function getValues (obj) {
 // `item`. For example, makeArrayOfItem('foo', 2) would return:
 // ['foo', 'foo']
 function makeArrayOfItem (item, length) {
+  let arr = []
+  for(let i = 0; i < length; i++) {
+    arr.push(item)
+  }
+  return arr
 }
 
 // makeArrayOfItems should return an array containing all arguments passed to it
 // Tip: consider JavaScript's Rest parameters
-function makeArrayOfItems () {
+function makeArrayOfItems (...arg) {
+  let arr = arg
+  return arr
 }
 
 // hasItem should return true if `item` is present in `arr` at least once,
 // otherwise it should return false.
 // Tip: there is an array function that makes this straightforward
 function hasItem (arr, item) {
+  return arr.includes(item)
 }
 
 // getItemAtIndex should return arr[idx] but only if that index exists:
 // if it doesn't, return a JavaScript Error object.
 function getItemAtIndex (arr, idx) {
+  if(arr[idx] === undefined) {
+    return Error()
+  } else {
+    return arr[idx]
+  }
 }
 
 // replaceItemAtIndex should return a copy of `arr` with
 // the element at `idx` replaced with `item`
 // Tip: consider the array literal spread syntax
 function replaceItemAtIndex (arr, idx, item) {
+  let newArr = arr
+  newArr.splice(idx, idx, item)
+  console.log(newArr)
+  return newArr
 }
 
 // insertItemAtIndex should return a copy of `arr` with `item` inserted at
 // `idx` without overwriting any array values (the array should get longer)
 function insertItemAtIndex (arr, item,  idx) {
+  let newArr = arr
+  newArr.splice(idx, 0, item)
+  console.log(newArr)
+  return newArr
 }
 
 // deleteItemAtIndex should return a copy of `arr` without
 // the element at `idx` (the array should get shorter).
 function deleteItemAtIndex (arr, idx) {
+  // let newArr = arr
+  arr.splice(idx, 1,)
+  console.log(arr)
+  return arr
 }
 
 // deleteItem should return an array with every instance of `item` removed
 function deleteItem (arr, item) {
+  let newArr = arr
+  for(let i = 0; i < arr.length; i++) {
+    if(arr[i] === item) {
+      console.log("before removal", newArr)
+      newArr.splice(i,1)
+      console.log("after removal", newArr)
+    }
+  }
+  console.log(newArr)
+  return newArr
 }
 
 // zipObject should return an object built from two arrays
